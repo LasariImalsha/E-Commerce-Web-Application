@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/authSlice";
-import FavoritesList from "../components/FavouritesList"; // Import the FavoritesList component
+import FavoritesList from "../components/FavouritesList"; 
 import Logo from '../assets/favicon.png'
 
 const Header = () => {
@@ -51,6 +51,11 @@ const Header = () => {
             </>
           ) : (
             <>
+
+              <Link to="/shopping" className="text-EcomBrown hover:text-EcomLightGray relative">
+                <i className="fas fa-store"></i> {/* Cart Icon */}
+              </Link>
+
               <button
                 onClick={() => setShowFavorites(!showFavorites)} // Toggle the favorite list visibility
                 className="text-EcomBrown hover:text-red-500"
@@ -58,10 +63,10 @@ const Header = () => {
                 <i className="fas fa-heart"></i> {/* Heart Icon */}
               </button>
 
-              {showFavorites && <FavoritesList favorites={favorites} />} {/* Show Favorites List if visible */}
+              {showFavorites && <FavoritesList favorites={favorites} />} 
 
               
-              <Link to="/cart" className="text-EcomBrown hover:text-orange-600 relative">
+              <Link to="/cart" className="text-EcomBrown hover:text-EcomLightGray relative">
                 <i className="fas fa-shopping-bag"></i> {/* Cart Icon */}
 
                 {cartItems.length > 0 && (
@@ -71,7 +76,7 @@ const Header = () => {
                 )}
               </Link>
               
-              <button onClick={handleLogout} className="text-EcomBrown hover:text-orange-600">
+              <button onClick={handleLogout} className="text-EcomBrown hover:text-EcomLightGray">
                 <i className="fas fa-sign-out-alt"></i> {/* Logout Icon */}
               </button>
             </>

@@ -3,32 +3,32 @@ import React, { useState } from "react";
 import { itemsData } from "../db/db";
 import ItemCard from "../components/ItemCard";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavorites } from "../redux/favoriteSlice"; // Import the action for adding to favorites
-import FavoritesList from "../components/FavouritesList"; // Import the FavoritesList component
-import { useNavigate } from "react-router-dom"; // Import for navigation
+import { addToFavorites } from "../redux/favoriteSlice"; 
+import FavoritesList from "../components/FavouritesList"; 
+import { useNavigate } from "react-router-dom"; 
 
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState("casual-wear");
-  const [isFavoritesVisible, setFavoritesVisible] = useState(false); // Manage visibility of the favorites list
-  const [selectedItem, setSelectedItem] = useState(null); // Track selected item for detailed view
-  const favorites = useSelector((state) => state.favorites.items); // Access favorites from the Redux store
-  const dispatch = useDispatch(); // Use the useDispatch hook to get the dispatch function
-  const navigate = useNavigate(); // Use navigate to change category view
+  const [isFavoritesVisible, setFavoritesVisible] = useState(false); 
+  const [selectedItem, setSelectedItem] = useState(null); 
+  const favorites = useSelector((state) => state.favorites.items); 
+  const dispatch = useDispatch(); 
+  const navigate = useNavigate(); 
 
   // Function to toggle favorites list visibility
   const toggleFavoritesVisibility = () => {
-    setFavoritesVisible(!isFavoritesVisible); // Toggle visibility of the favorites list
+    setFavoritesVisible(!isFavoritesVisible); 
   };
 
   const handleAddToFavorites = (item) => {
-    dispatch(addToFavorites(item)); // Dispatch the action to add the item to favorites
+    dispatch(addToFavorites(item)); 
   };
 
   // Function to handle "View" button click
   const handleViewItem = (item) => {
-    setSelectedCategory(item.category); // Update selected category
-    setSelectedItem(item); // Set the selected item for detailed view
-    setFavoritesVisible(false); // Close the favorites list
+    setSelectedCategory(item.category); 
+    setSelectedItem(item); 
+    setFavoritesVisible(false); 
   };
 
   return (
@@ -41,7 +41,7 @@ const Categories = () => {
               <li>
                 <button
                   onClick={() => setSelectedCategory("casual-wear")}
-                  className="text-lg font-semibold hover:text-blue-500"
+                  className="text-lg font-semibold text-EcomBrown hover:text-orange-300"
                 >
                   Casual Wear
                 </button>
@@ -49,7 +49,7 @@ const Categories = () => {
               <li>
                 <button
                   onClick={() => setSelectedCategory("sport-wear")}
-                  className="text-lg font-semibold hover:text-blue-500"
+                  className="text-lg font-semibold text-EcomBrown hover:text-orange-300"
                 >
                   Sport Wear
                 </button>
@@ -57,7 +57,7 @@ const Categories = () => {
               <li>
                 <button
                   onClick={() => setSelectedCategory("foot-wear")}
-                  className="text-lg font-semibold hover:text-blue-500"
+                  className="text-lg font-semibold text-EcomBrown hover:text-orange-300"
                 >
                   Foot Wear
                 </button>
@@ -65,7 +65,7 @@ const Categories = () => {
               <li>
                 <button
                   onClick={() => setSelectedCategory("accessories")}
-                  className="text-lg font-semibold hover:text-blue-500"
+                  className="text-lg font-semibold text-EcomBrown hover:text-orange-300"
                 >
                   Accessories
                 </button>
@@ -89,8 +89,8 @@ const Categories = () => {
         {isFavoritesVisible && (
           <FavoritesList
             favorites={favorites}
-            closeFavoritesList={toggleFavoritesVisibility} // Correctly pass closeFavoritesList
-            onViewItem={handleViewItem} // **Pass the onViewItem function correctly here**
+            closeFavoritesList={toggleFavoritesVisibility} 
+            onViewItem={handleViewItem} 
           />
         )}
 
@@ -100,7 +100,7 @@ const Categories = () => {
             <h3 className="text-xl font-semibold">{selectedItem.name}</h3>
             <p>{selectedItem.description}</p>
             <p className="mt-2 text-gray-500">Price: {selectedItem.price}</p>
-            {/* Additional item details here */}
+            
           </div>
         )}
       </div>

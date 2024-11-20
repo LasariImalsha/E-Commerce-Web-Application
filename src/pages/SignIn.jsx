@@ -41,16 +41,16 @@ const SignIn = () => {
       <div className="absolute inset-0 blur-sm bg-black/40 bg-center top-[58px] h-full backdrop-blur-sm" />
 
       {/* Form container */}
-      <div className="relative w-full sm:w-11/12 lg:w-10/12 xl:w-8/12 flex rounded-lg overflow-hidden shadow-xl bg-black bg-opacity-5 backdrop-blur-lg">
-        {/* Left Column - Image Section */}
-        <div className="w-full sm:w-1/2 h-full bg-cover bg-center p-3">
-          <img src={SideImage} alt="Sign In" />
+      <div className="relative w-full sm:w-11/12 lg:w-10/12 xl:w-8/12 flex flex-col sm:flex-row rounded-lg overflow-hidden shadow-xl bg-black bg-opacity-5 backdrop-blur-lg">
+        {/* Image Section */}
+        <div className="w-full sm:w-1/2 h-auto bg-cover bg-center p-3">
+          <img src={SideImage} alt="Sign In" className="w-full rounded-lg bg-cover" />
         </div>
 
-        {/* Right Column - Form Section */}
+        {/* Form Section */}
         <div className="w-full sm:w-1/2 p-8 flex flex-col items-center justify-center">
           <h2 className="text-3xl text-center text-white font-bold mb-6">Sign In</h2>
-          <form onSubmit={formik.handleSubmit} className="space-y-4">
+          <form onSubmit={formik.handleSubmit} className="space-y-4 w-full">
             {/* Email */}
             <input
               type="email"

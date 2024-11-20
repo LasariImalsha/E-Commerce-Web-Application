@@ -1,4 +1,3 @@
-// Cart.js
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart, incrementQuantity, decrementQuantity } from '../redux/cartSlice';
@@ -41,42 +40,37 @@ const Cart = () => {
               <p className="text-gray-500">{item.price}</p>
             </div>
 
-            {/* Left-side Bin Icon or Minus Icon */}
-            <div className="flex items-center space-x-2">
-              {item.quantity > 1 ? (
-                <FaMinus
-                  className="text-red-500 cursor-pointer"
-                  size={20}
-                  onClick={() => handleDecrement(item.id)}
-                />
-              ) : (
-                <FaTrashAlt
-                  className="text-red-500 cursor-pointer"
-                  size={20}
-                  onClick={() => handleRemoveItem(item.id)}
-                />
-              )}
-            </div>
+            <div className='flex flex-row gap-x-4'>
+              {/* Left-side Bin Icon or Minus Icon */}
+              <div className="flex items-center space-x-2">
+                {item.quantity > 1 ? (
+                  <FaMinus
+                    className="text-red-600 cursor-pointer"
+                    size={15}
+                    onClick={() => handleDecrement(item.id)}
+                  />
+                ) : (
+                  <FaTrashAlt
+                    className="text-red-600 cursor-pointer"
+                    size={15}
+                    onClick={() => handleRemoveItem(item.id)}
+                  />
+                )}
+              </div>
 
-            {/* Quantity Display */}
-            <span className="text-sm font-semibold">{item.quantity}</span>
+              {/* Quantity Display */}
+              <span className="text-sm font-semibold">{item.quantity}</span>
 
-            {/* Right-side Plus Icon */}
-            <div className="flex items-center space-x-2">
-              {item.quantity > 1 ? (
+              {/* Right-side Plus Icon */}
+              <div className="flex items-center space-x-2">
                 <FaPlus
-                  className="text-green-500 cursor-pointer"
-                  size={20}
+                  className="text-EcomBrown cursor-pointer"
+                  size={15}
                   onClick={() => handleIncrement(item.id)}
                 />
-              ) : (
-                <FaPlus
-                  className="text-green-500 cursor-pointer"
-                  size={20}
-                  onClick={() => handleIncrement(item.id)}
-                />
-              )}
+              </div>
             </div>
+
           </div>
         ))}
       </div>
@@ -94,7 +88,7 @@ const Cart = () => {
             <span>{cartItems.length}</span>
           </div>
         </div>
-        <button className="w-full bg-green-500 text-white py-2 mt-4 rounded-md hover:bg-green-600">
+        <button className="w-full bg-gradient-to-r from-EcomBrown to-EcomDarkGray text-white py-2 mt-4 rounded-md hover:bg-EcomDark/50">
           Checkout
         </button>
       </div>

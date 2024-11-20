@@ -1,9 +1,7 @@
 import React, { createContext, useState, useContext } from "react";
 
-// Create context
 const AuthContext = createContext();
 
-// Create provider component
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({
     isAuthenticated: false,
@@ -11,7 +9,6 @@ export const AuthProvider = ({ children }) => {
   });
 
   const login = (email, password) => {
-    // Handle login logic
     setAuth({ isAuthenticated: true, user: { email } });
   };
 
