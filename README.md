@@ -35,7 +35,7 @@ A fully responsive e-commerce web application for a men's wear shop. This app al
 To get started, clone the repository to your local machine.
 
 ```bash
-        git clone https://github.com/LasariImalsha/E-Commerce-Web-Application
+    git clone https://github.com/LasariImalsha/E-Commerce-Web-Application
         
 ```
 
