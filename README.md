@@ -34,5 +34,25 @@ A fully responsive e-commerce web application for a men's wear shop. This app al
 ### **1. Clone the Repository**
 To get started, clone the repository to your local machine.
 
-```bash
-git clone https://github.com/yourusername/mens-wear-ecommerce.git
+    ```bash
+    git clone https://github.com/LasariImalsha/E-Commerce-Web-Application
+    ```
+
+### **2. Install Dependencies**
+Navigate to the project directory and install the required dependencies using npm:
+
+
+    ```bash
+    cd E-Commerce-Web-Application
+    npm install
+    ```
+
+### **3. Start the Application**
+Once the dependencies are installed, you can start the application by running:
+
+  ```bash
+   npm start
+  
+```
+
+This will start the development server. After that, you can open the application in your browser by navigating to http://localhost:3000.
